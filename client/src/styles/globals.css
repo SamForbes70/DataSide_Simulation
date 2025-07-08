@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ds-teal: #00BB9E;
+  --ds-navy: #002D6F;
+  --ds-text: #222;
+  --ds-bg: #fff;
+  --ds-gray-50: #f9fafb;
+  --ds-gray-100: #f3f4f6;
+  --ds-gray-200: #e5e7eb;
+  --ds-gray-300: #d1d5db;
+  --ds-gray-400: #9ca3af;
+  --ds-gray-500: #6b7280;
+  --ds-gray-600: #4b5563;
+  --ds-gray-700: #374151;
+  --ds-gray-800: #1f2937;
+  --ds-gray-900: #111827;
+}
+
+[data-theme="dark"] {
+  --ds-text: #f9fafb;
+  --ds-bg: #111827;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: var(--ds-text);
+  background: var(--ds-bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.dataside-primary {
+  color: var(--ds-teal);
+}
+
+.dataside-secondary {
+  color: var(--ds-navy);
+}
+
+.dataside-bg-primary {
+  background-color: var(--ds-teal);
+}
+
+.dataside-bg-secondary {
+  background-color: var(--ds-navy);
+}
+
+.dataside-border-primary {
+  border-color: var(--ds-teal);
+}
+
+.dataside-border-secondary {
+  border-color: var(--ds-navy);
+}
+
+.dataside-gradient {
+  background: linear-gradient(135deg, var(--ds-teal) 0%, var(--ds-navy) 100%);
+}
+
+.dataside-text-gradient {
+  background: linear-gradient(135deg, var(--ds-teal) 0%, var(--ds-navy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.inter-font {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ds-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ds-gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-teal);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--ds-teal);
+  outline-offset: 2px;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* DataSide specific component styles */
+.dataside-card {
+  background: var(--ds-bg);
+  border: 1px solid var(--ds-gray-200);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+.dataside-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-color: var(--ds-teal);
+}
+
+.dataside-button-primary {
+  background-color: var(--ds-teal);
+  color: white;
+  font-weight: 600;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.dataside-button-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.dataside-button-secondary {
+  background-color: var(--ds-navy);
+  color: white;
+  font-weight: 600;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.dataside-button-secondary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Typography utilities */
+.dataside-heading {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--ds-navy);
+  line-height: 1.2;
+}
+
+.dataside-subheading {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  color: var(--ds-gray-700);
+  line-height: 1.3;
+}
+
+.dataside-body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  color: var(--ds-text);
+  line-height: 1.6;
+}
+
+/* Status indicators */
+.status-connected {
+  color: var(--ds-teal);
+}
+
+.status-disconnected {
+  color: #ef4444;
+}
+
+.status-warning {
+  color: #f59e0b;
+}
+
+/* Table styles */
+.dataside-table {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.dataside-table th {
+  font-weight: 600;
+  color: var(--ds-navy);
+}
+
+.dataside-table td {
+  font-weight: 400;
+}
+
+/* Form styles */
+.dataside-input {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  border: 1px solid var(--ds-gray-300);
+  transition: border-color 0.2s ease-in-out;
+}
+
+.dataside-input:focus {
+  border-color: var(--ds-teal);
+  box-shadow: 0 0 0 3px rgba(0, 187, 158, 0.1);
+}
+
+.dataside-label {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  color: var(--ds-navy);
+}
